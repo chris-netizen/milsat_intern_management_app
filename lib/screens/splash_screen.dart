@@ -1,6 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
-import 'package:milsat_management_app/extras/constants.dart';
-import 'package:milsat_management_app/screens/pre_login_screen.dart';
+import '../extras/files.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,12 +19,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _preLoginScreen() async {
     await Future.delayed(const Duration(milliseconds: 7000), () {});
-    // ignore: use_build_context_synchronously
     Navigator.push(
       context,
-      (MaterialPageRoute(
-        builder: ((context) => const PreLogin()),
-      )),
+      MaterialPageRoute(
+        builder: (concept) => const PreLogin(),
+      ),
     );
   }
 
@@ -33,8 +33,8 @@ class _SplashScreenState extends State<SplashScreen> {
       color: AppTheme.mainAppTheme,
       child: Center(
         child: SizedBox(
-          height: 46,
-          width: 181,
+          height: 46.h,
+          width: 181.w,
           child: Image.asset(
             'assets/app_logo.png',
           ),

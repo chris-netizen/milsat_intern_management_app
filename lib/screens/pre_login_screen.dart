@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:milsat_management_app/screens/login_page.dart';
+import '../extras/files.dart';
 
 class PreLogin extends StatelessWidget {
   const PreLogin({super.key});
@@ -11,36 +10,38 @@ class PreLogin extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Gap(187),
+          Gap(187.h),
           SizedBox(
-            height: 40,
-            width: 157.09,
+            height: 40.h,
+            width: 157.09.w,
             child: Image.asset(
               'assets/app_logo.png',
             ),
           ),
-          const Gap(61),
-          const Text(
+          Gap(61.h),
+          Text(
             'Welcome to \nMilsat Internship',
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontFamily: 'RaleWay',
-                fontSize: 31,
+                fontSize: 31.sp,
                 fontWeight: FontWeight.w600),
           ),
-          const Gap(184),
-          const Text(
+          Gap(184.h),
+          Text(
             'Login to get started',
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w400,
-              color: Color(0xFF79717A),
+              color: AppTheme.smallTextColor,
             ),
           ),
           const Gap(35),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: EdgeInsets.symmetric(
+              horizontal: 24.w,
+            ),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(

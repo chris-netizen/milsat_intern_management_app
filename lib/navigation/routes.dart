@@ -1,0 +1,40 @@
+/// This file defines names for views in this project used as named routes.
+/// These names are constant strings and should be defined in the format
+///
+/// ``` const String *viewName*ViewRoute = 'unique_route_name';  ```
+const String homeRoute = '/home';
+const String preLogInRoute = '/preLogIn';
+const String logInRoute = '/logIn';
+const String registerRoute = '/register';
+const String mainPage = '/main';
+// const String createAccount = '/createAccount';
+// const String mailLogin = '/mailLogin';
+// const String reset = '/reset';
+// const String resetLink = '/resetLink';
+// const String cctvRoute = '/cctv';
+// const String myHome = '/myHome';
+// const String address = '/address';
+// const String googleAdd = '/googleAdd';
+// const String track = '/track';
+// const String review = '/review';
+// const String edit = '/edit';
+// const String submitted = '/submitted';
+// const String help = '/help';
+// const String wallet = '/wallet';
+// const String addCard = '/addCard';
+// const String editCard = '/editCard';
+// const String fund = '/fund';
+// const String completedOrder = '/completedOrder';
+// const String menuPage = '/menuPage';
+// const String mealSearch = '/mealSearch';
+// const String kitchenPage = '/kitchenPage';
+// const String termsAndConditions = '/termsAndConditions';
+// const String miniCartPage = '/miniCartPage';
+// const String cart = '/cart';
+// const String checkOut = '/checkOut';
+// const String paymentScreen = '/paymentScreen';
+// const String checkOutBack = '/checkOutBack';
+// const String checkOutPageWithCoupon = '/checkOutPageWithCoupon';
+// const String checkOutPageWithCouponModel = '/checkOutPageWithCouponModel';
+// const String orderSuccessful = '/orderSuccessful';
+// const String settingsRoute = '/settingsRoute';
