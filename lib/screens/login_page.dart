@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../extras/files.dart';
+import '../files.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -123,8 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text(
                         'Login',
                         style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
+                            fontWeight: FontWeight.w600, fontFamily: 'Raleway'),
                       ),
                     ),
                   ),

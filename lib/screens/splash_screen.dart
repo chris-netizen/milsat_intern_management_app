@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import '../extras/files.dart';
+import '../files.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,12 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _preLoginScreen() async {
     await Future.delayed(const Duration(milliseconds: 7000), () {});
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (concept) => const PreLogin(),
-      ),
-    );
+    AppNavigator.navigateTo(pre);
   }
 
   @override

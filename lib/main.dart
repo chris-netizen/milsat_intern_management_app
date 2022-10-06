@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'extras/files.dart';
+import 'files.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +29,8 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.purple,
           ),
           home: const SplashScreen(),
+          navigatorKey: AppNavigator.navKey,
+          onGenerateRoute: AppRouter.generateRoutes,
         );
       },
     );

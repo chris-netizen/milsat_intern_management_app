@@ -3,10 +3,10 @@
 ///
 /// ``` const String *viewName*ViewRoute = 'unique_route_name';  ```
 const String homeRoute = '/home';
-const String preLogInRoute = '/preLogIn';
+const String pre = '/pre';
 const String logInRoute = '/logIn';
-const String registerRoute = '/register';
-const String mainPage = '/main';
+// const String registerRoute = '/register';
+// const String mainPage = '/main';
 // const String createAccount = '/createAccount';
 // const String mailLogin = '/mailLogin';
 // const String reset = '/reset';

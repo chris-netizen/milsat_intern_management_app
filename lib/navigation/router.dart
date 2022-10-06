@@ -1,12 +1,12 @@
 import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../extras/files.dart';
+import '../files.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
     switch (settings.name) {
-      case preLogInRoute:
+      case pre:
         return getPageRoute(
           settings: settings,
           view: const PreLogin(),

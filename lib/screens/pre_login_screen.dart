@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../extras/files.dart';
+import '../files.dart';
 
 class PreLogin extends StatelessWidget {
   const PreLogin({super.key});
@@ -44,12 +44,7 @@ class PreLogin extends StatelessWidget {
             ),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginPage(),
-                  ),
-                );
+                AppNavigator.navigateTo(logInRoute);
               },
               child: const Text('Login'),
             ),
