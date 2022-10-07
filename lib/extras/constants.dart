@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:milsat_management_app/files.dart';
 
 class AppTheme {
-  static const mainAppTheme = Colors.white;
+  static const mainAppTheme = Color(0xFFFFFFFF);
   static const textColor = Color(0xFF5E545F);
   static const smallTextColor = Color(0xFF79717A);
   static const deepPurpleColor = Color(0xFF803785);
+  static const mobileAlertColor = Color(0xFFCBADCD);
+  static const deepestPurpleColor = Color(0xFF4E2251);
+  static const greyTextColor = Color(0xFF423B43);
 }
 
 TextStyle boldTextStyle = TextStyle(
@@ -41,6 +44,14 @@ TextStyle coloredTextStyle2 = TextStyle(
   fontSize: 18.sp,
   fontWeight: FontWeight.w500,
   fontFamily: 'RaleWay',
+);
+
+TextStyle alertTextStyle2 = TextStyle(
+  color: const Color(0xFF4E2251),
+  fontSize: 16.sp,
+  fontWeight: FontWeight.w500,
+  fontFamily: 'RaleWay',
+  letterSpacing: 0.25,
 );
 
 TextStyle veryBoldTextStyle = TextStyle(

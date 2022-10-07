@@ -12,3 +12,6 @@ export 'package:milsat_management_app/screens/forget_password.dart';
 export 'package:milsat_management_app/extras/wide_app_button.dart';
 export 'package:milsat_management_app/screens/reset_password.dart';
 export 'package:milsat_management_app/extras/return_to_login.dart';
+export 'package:milsat_management_app/extras/circleAvatar.dart';
+export 'package:milsat_management_app/extras/intern_info.dart';
+export 'package:milsat_management_app/extras/profile_header.dart';
