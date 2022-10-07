@@ -5,6 +5,7 @@ class AppTheme {
   static const mainAppTheme = Colors.white;
   static const textColor = Color(0xFF5E545F);
   static const smallTextColor = Color(0xFF79717A);
+  static const deepPurpleColor = Color(0xFF803785);
 }
 
 TextStyle boldTextStyle = TextStyle(
