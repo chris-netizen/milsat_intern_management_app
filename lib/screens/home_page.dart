@@ -22,28 +22,39 @@ class HomePage extends StatelessWidget {
               height: 22.h,
               width: 143.w,
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppTheme.deepPurpleColor,
-                ),
+                borderRadius: BorderRadius.circular(2),
+                border: Border.all(color: AppTheme.deepPurpleColor),
               ),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  suffixIcon: Container(
-                    padding: const EdgeInsets.all(4),
-                    height: 14.h,
-                    width: 14.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(2.r),
-                      color: AppTheme.deepestPurpleColor,
+              child: Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Intern, message...',
+                        ),
+                        cursorHeight: 12.h,
+                      ),
                     ),
-                    child: const Icon(
-                      Icons.search,
-                      color: AppTheme.mainAppTheme,
+                    GestureDetector(
+                      onTap: () {
+                        print('Hello, i\'m alive');
+                      },
+                      child: Container(
+                        height: 22.h,
+                        width: 22.w,
+                        decoration: const BoxDecoration(
+                          color: AppTheme.deepPurpleColor,
+                        ),
+                        child: const Icon(
+                          Icons.search,
+                          size: 10,
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                cursorHeight: 12.h,
               ),
             ),
           ],
@@ -52,9 +63,14 @@ class HomePage extends StatelessWidget {
         elevation: 1,
         backgroundColor: AppTheme.mainAppTheme,
         actions: [
-          const Icon(
-            Icons.notifications_outlined,
-            color: AppTheme.textColor,
+          GestureDetector(
+            onTap: () {
+              AppNavigator.navigateTo(inbox);
+            },
+            child: const Icon(
+              Icons.notifications_outlined,
+              color: AppTheme.textColor,
+            ),
           ),
           Gap(12.67.w),
           CircleAvatarMock(

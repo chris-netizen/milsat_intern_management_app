@@ -30,11 +30,13 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  faker: ^2.0.0
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.5.4
   fluttericon: ^2.0.0
   gap: ^2.0.0
+  jiffy: ^5.0.0
   screen_utils: ^0.0.1
 
 dev_dependencies:

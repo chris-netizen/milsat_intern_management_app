@@ -15,3 +15,8 @@ export 'package:milsat_management_app/extras/return_to_login.dart';
 export 'package:milsat_management_app/extras/circleAvatar.dart';
 export 'package:milsat_management_app/extras/intern_info.dart';
 export 'package:milsat_management_app/extras/profile_header.dart';
+export 'package:faker/faker.dart';
+export 'package:flutter/cupertino.dart';
+export 'package:milsat_management_app/extras/message_data.dart';
+export 'package:milsat_management_app/extras/message_tile.dart';
+export 'package:milsat_management_app/screens/inbox.dart';

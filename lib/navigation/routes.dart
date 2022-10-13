@@ -5,7 +5,7 @@
 const String homeRoute = '/home';
 const String pre = '/pre';
 const String logInRoute = '/logIn';
-// const String registerRoute = '/register';
+const String inbox = '/inbox';
 // const String mainPage = '/main';
 // const String createAccount = '/createAccount';
 // const String mailLogin = '/mailLogin';

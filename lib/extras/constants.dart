@@ -9,6 +9,7 @@ class AppTheme {
   static const mobileAlertColor = Color(0xFFCBADCD);
   static const deepestPurpleColor = Color(0xFF4E2251);
   static const greyTextColor = Color(0xFF423B43);
+  static const greyColor = Color(0xFF2D282E);
 }
 
 TextStyle boldTextStyle = TextStyle(

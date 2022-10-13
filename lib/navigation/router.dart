@@ -16,6 +16,11 @@ class AppRouter {
           settings: settings,
           view: const LoginPage(),
         );
+      case inbox:
+        return getPageRoute(
+          settings: settings,
+          view: const InboxPage(),
+        );
 
       default:
         return getPageRoute(
