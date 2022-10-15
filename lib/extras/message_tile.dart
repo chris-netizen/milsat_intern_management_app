@@ -12,20 +12,53 @@ class Message_Tile extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 97.h,
-      child: Row(
+      child: Column(
         children: [
-          CircleAvatar(
-            backgroundImage: AssetImage(
-              messageData.profilePicture,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage(
+                    messageData.profilePicture,
+                  ),
+                  radius: 27.r,
+                ),
+                Gap(24.w),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        messageData.senderName,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Raleway',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                        child: Text(
+                          messageData.message,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              fontFamily: 'Raleway',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w500,
+                              color: AppTheme.textColor),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            radius: 27.r,
           ),
-          Gap(24.w),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Hi'),
-            ],
+          const Divider(
+            color: Color(0xFFF2EBF3),
           ),
         ],
       ),
