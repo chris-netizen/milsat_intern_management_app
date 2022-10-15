@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:milsat_management_app/files.dart';
 
 class AppTheme {
@@ -52,7 +51,6 @@ TextStyle alertTextStyle2 = TextStyle(
   fontSize: 16.sp,
   fontWeight: FontWeight.w500,
   fontFamily: 'RaleWay',
-  letterSpacing: 0.25,
 );
 
 TextStyle veryBoldTextStyle = TextStyle(
