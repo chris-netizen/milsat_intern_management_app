@@ -12,8 +12,15 @@ class AppTheme {
 }
 
 TextStyle boldTextStyle = TextStyle(
-  color: const Color(0xFF2D282E),
+  color: const Color(0xFF5E545F),
   fontSize: 36.sp,
+  fontWeight: FontWeight.w600,
+  fontFamily: 'RaleWay',
+);
+
+TextStyle numericStyle = TextStyle(
+  color: const Color(0xFF2D282E),
+  fontSize: 25.sp,
   fontWeight: FontWeight.w600,
   fontFamily: 'RaleWay',
 );
@@ -56,6 +63,13 @@ TextStyle alertTextStyle2 = TextStyle(
 TextStyle veryBoldTextStyle = TextStyle(
   color: const Color(0xFF2D282E),
   fontSize: 36.sp,
+  fontWeight: FontWeight.w600,
+  fontFamily: 'RaleWay',
+);
+
+TextStyle internBoldTextStyle = TextStyle(
+  color: const Color(0xFFFFFFFF),
+  fontSize: 25.sp,
   fontWeight: FontWeight.w600,
   fontFamily: 'RaleWay',
 );

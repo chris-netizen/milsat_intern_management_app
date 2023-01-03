@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:milsat_management_app/mainpage.dart';
 
-import '../files.dart';
+import '../../files.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -115,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                         context,
                         (MaterialPageRoute(
-                          builder: (context) => const HomePage(),
+                          builder: (context) => const MainPage(),
                         )),
                       );
                     },

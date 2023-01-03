@@ -19,7 +19,7 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
       style: const TextStyle(
         color: Color(0xFF5E545F),
       ),
-      elevation: 16,
+      elevation: 10,
       onChanged: (String? value) {
         // This is called when the user selects an item.
         setState(() {
