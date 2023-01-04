@@ -12,11 +12,38 @@ class MilsatIntern extends StatelessWidget {
         Container(
           color: AppTheme.deepPurpleColor,
           height: 100.h,
+          child: Center(
+            child: Text(
+              'Milsat Intern',
+              style: internBoldTextStyle,
+            ),
+          ),
         ),
         Positioned(
-          left: 100,
-          top: 35,
-          child: Text('Milsat Intern', style: internBoldTextStyle),
+          child: Image.asset(
+            'assets/interndesign1.png',
+            // color: const Color(0xFFE9EBF8),
+            height: 30.h,
+          ),
+        ),
+        Positioned(
+          left: 110.w,
+          top: 78.h,
+          child: Image.asset(
+            'assets/inernmiddle.png',
+            // color: const Color(0xFFE9EBF8),
+            height: 30.h,
+            width: 150.w,
+          ),
+        ),
+        Positioned(
+          left: 350.w,
+          top: 50.h,
+          child: Image.asset(
+            'assets/internlast.png',
+            // color: const Color(0xFFE9EBF8),
+            height: 50.h,
+          ),
         ),
       ],
     );

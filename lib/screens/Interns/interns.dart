@@ -2,14 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/extras/dropdownmenu.dart';
+import 'package:milsat_management_app/screens/Interns/intern_card.dart';
 import 'package:milsat_management_app/extras/milsat_intern.dart';
 import 'package:milsat_management_app/files.dart';
 
 const List<String> list = <String>[
   'All Department',
   'UI/UX',
-  'Software Development',
-  'Community Development'
+  'Web Dev.',
+  'Mobile Dev.',
+  'Community Dev.',
+  'Backend Dev.'
 ];
 
 class Interns extends StatefulWidget {
@@ -30,50 +33,69 @@ class _InternsState extends State<Interns> {
           Padding(
             padding: EdgeInsets.only(
               top: 16.h,
-              left: 24.w,
-              right: 24.w,
+              left: 16.w,
+              right: 16.w,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Total Intern: '),
-                    Text(
-                      '$numInterns',
-                      style: numericStyle,
+                    Row(
+                      children: [
+                        const Text('Total Intern: '),
+                        Text(
+                          '$numInterns',
+                          style: numericStyle,
+                        ),
+                      ],
                     ),
-                    const Gap(10),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: AppTheme.deepPurpleColor,
-                          borderRadius: BorderRadius.circular(6)),
-                      padding: const EdgeInsets.all(5),
-                      child: const Icon(
-                        Icons.window_outlined,
-                        size: 18,
-                        color: AppTheme.mainAppTheme,
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: AppTheme.deepPurpleColor,
+                            borderRadius: BorderRadius.circular(6)),
+                        padding: const EdgeInsets.all(5),
+                        child: const Icon(
+                          Icons.window_outlined,
+                          size: 18,
+                          color: AppTheme.mainAppTheme,
+                        ),
                       ),
                     ),
-                    const Gap(10),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: AppTheme.mainAppTheme,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      padding: const EdgeInsets.all(5),
-                      child: const Icon(
-                        Icons.list,
-                        size: 18,
-                        // color: AppTheme.mainAppTheme,
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: AppTheme.mainAppTheme,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        padding: const EdgeInsets.all(5),
+                        child: const Icon(
+                          Icons.list,
+                          size: 18,
+                          // color: AppTheme.mainAppTheme,
+                        ),
                       ),
                     ),
-                    Gap(5),
                     const DropdownButtonExample(),
                   ],
                 ),
+                const Gap(15),
               ],
             ),
-          )
+          ),
+          Expanded(
+              child: GridView.builder(
+            itemCount: 17,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2),
+            itemBuilder: (context, index) {
+              return const InternCard();
+            },
+          )),
         ],
       ),
     );
