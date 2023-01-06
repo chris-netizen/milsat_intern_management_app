@@ -1,7 +1,9 @@
 import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:milsat_management_app/screens/Mentor/mentor_profile.dart';
 import '../files.dart';
+import '../screens/Interns/intern_profile.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
@@ -20,6 +22,16 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const InboxPage(),
+        );
+      case mentorProfile:
+        return getPageRoute(
+          settings: settings,
+          view: const MentorProfile(),
+        );
+      case internProfile:
+        return getPageRoute(
+          settings: settings,
+          view: const InternProfile(),
         );
 
       default:

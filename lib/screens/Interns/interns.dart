@@ -55,8 +55,9 @@ class _InternsState extends State<Interns> {
                       onTap: () {},
                       child: Container(
                         decoration: BoxDecoration(
-                            color: AppTheme.deepPurpleColor,
-                            borderRadius: BorderRadius.circular(6)),
+                          color: AppTheme.deepPurpleColor,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
                         padding: const EdgeInsets.all(5),
                         child: const Icon(
                           Icons.window_outlined,

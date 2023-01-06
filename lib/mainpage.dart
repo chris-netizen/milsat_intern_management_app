@@ -12,7 +12,7 @@ class _MainPageState extends State<MainPage> {
   final pages = const [
     HomePage(),
     InboxPage(),
-    AdminPage(),
+    MentorPage(),
     Interns(),
     Others()
   ];

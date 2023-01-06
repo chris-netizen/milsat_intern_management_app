@@ -73,3 +73,17 @@ TextStyle internBoldTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
   fontFamily: 'RaleWay',
 );
+
+TextStyle profileTextHeader = TextStyle(
+  color: const Color(0xFF5E545F),
+  fontSize: 18.sp,
+  fontWeight: FontWeight.w500,
+  fontFamily: 'RaleWay',
+);
+
+TextStyle profileTextFont = TextStyle(
+  color: const Color(0xFF2D282E),
+  fontSize: 18.sp,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'RaleWay',
+);

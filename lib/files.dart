@@ -22,4 +22,4 @@ export 'package:milsat_management_app/extras/message_tile.dart';
 export 'package:milsat_management_app/screens/Inbox/inbox.dart';
 export 'package:milsat_management_app/screens/Interns/interns.dart';
 export 'package:milsat_management_app/screens/Others/others.dart';
-export 'package:milsat_management_app/screens/adminpage/admin.dart';
+export 'package:milsat_management_app/screens/Mentor/mentor.dart';
