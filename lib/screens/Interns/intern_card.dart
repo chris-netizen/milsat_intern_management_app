@@ -5,7 +5,15 @@ import 'package:milsat_management_app/extras/reusable_botton.dart';
 import 'package:milsat_management_app/files.dart';
 
 class InternCard extends StatelessWidget {
-  const InternCard({super.key});
+  const InternCard({
+    super.key,
+    required this.internImage,
+    required this.internName,
+    required this.internRole,
+  });
+  final String internImage;
+  final String internName;
+  final String internRole;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +29,12 @@ class InternCard extends StatelessWidget {
             children: [
               Gap(15.h),
               Image.asset(
-                'assets/woman_picture.png',
+                internImage,
                 width: 70.h,
               ),
               Gap(10.h),
               Text(
-                'Mathew Oke',
+                internName,
                 style: TextStyle(
                   color: const Color(0xFF000000),
                   fontSize: 16.sp,
@@ -35,7 +43,7 @@ class InternCard extends StatelessWidget {
                 ),
               ),
               Text(
-                'Backend Developer',
+                internRole,
                 style: TextStyle(
                   color: const Color(0xFF000000),
                   fontSize: 16.sp,

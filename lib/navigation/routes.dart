@@ -8,6 +8,7 @@ const String logInRoute = '/logIn';
 const String inbox = '/inbox';
 const String mentorProfile = '/mentorprofile';
 const String internProfile = '/internprofile';
+const String messagePage = '/messagepage';
 // const String mainPage = '/main';
 // const String createAccount = '/createAccount';
 // const String mailLogin = '/mailLogin';

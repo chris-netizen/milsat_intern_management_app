@@ -1,6 +1,7 @@
 import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:milsat_management_app/screens/Inbox/message_page.dart';
 import 'package:milsat_management_app/screens/Mentor/mentor_profile.dart';
 import '../files.dart';
 import '../screens/Interns/intern_profile.dart';

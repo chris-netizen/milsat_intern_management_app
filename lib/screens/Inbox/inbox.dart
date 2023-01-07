@@ -88,7 +88,7 @@ class InboxPage extends StatelessWidget {
                   messageData: MessageData(
                     senderName: faker.person.name(),
                     messageDate: date,
-                    profilePicture: 'assets/person.png',
+                    profilePicture: Helpers.randomPictureUrl(),
                     message: faker.lorem.sentence(),
                     dateMessage: Jiffy(date).fromNow(),
                   ),
@@ -96,6 +96,12 @@ class InboxPage extends StatelessWidget {
               })),
             )
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.message_sharp,
         ),
       ),
     );

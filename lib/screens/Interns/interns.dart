@@ -94,7 +94,11 @@ class _InternsState extends State<Interns> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2),
             itemBuilder: (context, index) {
-              return const InternCard();
+              return const InternCard(
+                internImage: 'assets/woman_picture.png',
+                internName: 'Matthew Oke',
+                internRole: 'Backend Developer',
+              );
             },
           )),
         ],
