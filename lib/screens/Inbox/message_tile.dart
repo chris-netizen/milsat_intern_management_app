@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:milsat_management_app/files.dart';
+import 'package:milsat_management_app/screens/Inbox/message_page.dart';
 
 // ignore: camel_case_types
 class Message_Tile extends StatelessWidget {
@@ -12,7 +13,14 @@ class Message_Tile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        AppNavigator.navigateTo(messagePage);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MessagePage(
+              messageData: messageData,
+            ),
+          ),
+        );
       },
       child: SizedBox(
         height: 75.h,
