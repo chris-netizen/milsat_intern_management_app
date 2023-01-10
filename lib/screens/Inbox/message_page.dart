@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/extras/helpers.dart';
+import 'package:milsat_management_app/screens/Inbox/sender_side.dart';
 
 import '../../files.dart';
 
@@ -98,6 +99,71 @@ class MessagePage extends StatelessWidget {
       body: Column(
         children: [
           const Divider(),
+          Gap(10.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                'Today',
+                style: TextStyle(fontFamily: 'Raleway'),
+              ),
+              Gap(3.w),
+              const Text(
+                '.',
+              ),
+              Gap(3.w),
+              const Text(
+                '12:00pm',
+                style: TextStyle(fontFamily: 'Raleway'),
+              ),
+            ],
+          ),
+          Gap(20.h),
+          Expanded(
+            child: ListView(
+              children: [
+                Sender(
+                  messageData: messageData,
+                  text:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, pellentesque eget ac ultrices.',
+                ),
+              ],
+            ),
+          ),
+          const Divider(),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 5.h),
+                child: Container(
+                  // color: Colors.black,
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.add_box_outlined,
+                          size: 20,
+                          color: Color(0xFF5E545F),
+                        ),
+                      ),
+                      Gap(17.w),
+                      GestureDetector(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.face,
+                          size: 20,
+                          color: Color(0xFF5E545F),
+                        ),
+                      ),
+                      TextField(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
