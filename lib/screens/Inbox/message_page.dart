@@ -157,9 +157,22 @@ class MessagePage extends StatelessWidget {
                           color: Color(0xFF5E545F),
                         ),
                       ),
-                      TextField(),
                     ],
                   ),
+                ),
+              ),
+              SizedBox(
+                width: 200.w,
+                height: 41.h,
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                      ),
+                      hintText: 'Type Something....'),
                 ),
               ),
             ],
