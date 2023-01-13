@@ -5,9 +5,11 @@ import 'package:milsat_management_app/screens/Inbox/message_page.dart';
 
 // ignore: camel_case_types
 class Message_Tile extends StatelessWidget {
-  const Message_Tile({super.key, required this.messageData});
+  const Message_Tile(
+      {super.key, required this.messageData, required this.time});
 
   final MessageData messageData;
+  final String time;
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +73,7 @@ class Message_Tile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        '12:00pm',
+                        time,
                         style: TextStyle(
                           color: const Color(0xFF423B43),
                           fontSize: 13.sp,

@@ -4,7 +4,7 @@ import 'package:milsat_management_app/screens/Inbox/sender_side.dart';
 
 import '../../files.dart';
 
-class MessagePage extends StatelessWidget {
+class MessagePage extends StatefulWidget {
   static Route route(MessageData data) => MaterialPageRoute(
         builder: (context) => MessagePage(
           messageData: data,
@@ -18,7 +18,41 @@ class MessagePage extends StatelessWidget {
   final MessageData messageData;
 
   @override
+  State<MessagePage> createState() => _MessagePageState();
+}
+
+class _MessagePageState extends State<MessagePage> {
+  TextEditingController senderMessage = TextEditingController();
+  bool Me = false;
+  @override
   Widget build(BuildContext context) {
+    List<Sender> senderMessages = [
+      Sender(
+        messageData: widget.messageData,
+        text:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, pellentesque eget ac ultrices.',
+      ),
+      Sender(
+        messageData: widget.messageData,
+        text:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, pellentesque eget ac ultrices.',
+      ),
+      Sender(
+        messageData: widget.messageData,
+        text:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, pellentesque eget ac ultrices.',
+      ),
+      Sender(
+        messageData: widget.messageData,
+        text:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, pellentesque eget ac ultrices.',
+      ),
+      Sender(
+        messageData: widget.messageData,
+        text:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, pellentesque eget ac ultrices.',
+      ),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -26,7 +60,7 @@ class MessagePage extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundImage: NetworkImage(
-                messageData.profilePicture,
+                widget.messageData.profilePicture,
               ),
               radius: 22.r,
             ),
@@ -35,7 +69,7 @@ class MessagePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  messageData.senderName,
+                  widget.messageData.senderName,
                   style: TextStyle(
                     fontSize: 18.sp,
                     fontFamily: 'Raleway',
@@ -124,20 +158,27 @@ class MessagePage extends StatelessWidget {
             child: ListView(
               children: [
                 Sender(
-                  messageData: messageData,
+                  messageData: widget.messageData,
                   text:
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, pellentesque eget ac ultrices.',
                 ),
               ],
             ),
           ),
-          const Divider(),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 5.h),
-                child: Container(
-                  // color: Colors.black,
+          Container(
+            decoration: const BoxDecoration(
+              border: Border.symmetric(
+                horizontal: BorderSide(
+                  color: Color(0xFFa29ca2),
+                ),
+              ),
+            ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 30.w,
+                  ),
                   child: Row(
                     children: [
                       GestureDetector(
@@ -160,22 +201,60 @@ class MessagePage extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 200.w,
-                height: 41.h,
-                child: TextFormField(
-                  decoration: const InputDecoration(
+                SizedBox(
+                  width: 200.w,
+                  height: 41.h,
+                  child: TextField(
+                    controller: senderMessage,
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide.none,
                       ),
-                      hintText: 'Type Something....'),
+                      hintText: 'Type Something....',
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: Container(
+                    height: 41.h,
+                    color: AppTheme.deepPurpleColor,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 8.w),
+                      child: GestureDetector(
+                        onTap: () {
+                          if (senderMessage.text.isNotEmpty) {
+                            Me = !Me;
+                            setState(() {});
+                          }
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              'Send',
+                              style: TextStyle(
+                                color: AppTheme.mainAppTheme,
+                                fontSize: 15.sp,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Gap(4.w),
+                            Icon(
+                              Icons.send,
+                              size: 14.sp,
+                              color: AppTheme.mainAppTheme,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

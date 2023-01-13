@@ -9,6 +9,8 @@ class InboxPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String hour = TimeOfDay.now().hour.toString();
+    String min = TimeOfDay.now().minute.toString();
     final Faker faker = Faker();
     final date = Helpers.randomDate();
     return Scaffold(
@@ -92,6 +94,7 @@ class InboxPage extends StatelessWidget {
                     message: faker.lorem.sentence(),
                     dateMessage: Jiffy(date).fromNow(),
                   ),
+                  time: '$hour:$min',
                 );
               })),
             )
