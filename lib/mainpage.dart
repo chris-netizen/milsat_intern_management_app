@@ -89,7 +89,7 @@ class _MainPageState extends State<MainPage> {
         actions: [
           GestureDetector(
             onTap: () {
-              AppNavigator.navigateTo(internProfile);
+              AppNavigator.navigateTo(myProfile);
             },
             child: CircleAvatarMock(
               radius: 12.r,

@@ -8,9 +8,9 @@ class InternProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String internName = 'Somoye Christopher';
-    String internTitle = 'Mobile Dev. Intern';
-    String internEmail = 'adedejisomoye1@gmail.com';
+    String internName = 'Matthew Oke';
+    String internTitle = 'Backend Dev.';
+    String internEmail = 'mathewoke@gmail.com';
     return Scaffold(
       appBar: AppBar(),
       body: Column(
