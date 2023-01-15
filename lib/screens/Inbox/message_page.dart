@@ -176,8 +176,9 @@ class _MessagePageState extends State<MessagePage> {
             child: Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 30.w,
+                  padding: EdgeInsets.only(
+                    left: 30.w,
+                    right: 15.w,
                   ),
                   child: Row(
                     children: [

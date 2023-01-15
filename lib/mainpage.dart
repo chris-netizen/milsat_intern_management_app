@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/files.dart';
+import 'package:milsat_management_app/screens/profile/intern_profile.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -14,7 +15,7 @@ class _MainPageState extends State<MainPage> {
     InboxPage(),
     MentorPage(),
     Interns(),
-    Others()
+    Report(),
   ];
 
   int currentIndex = 0;
@@ -86,9 +87,14 @@ class _MainPageState extends State<MainPage> {
         elevation: 1,
         backgroundColor: AppTheme.mainAppTheme,
         actions: [
-          CircleAvatarMock(
-            radius: 12.r,
-            imageString: 'assets/person.png',
+          GestureDetector(
+            onTap: () {
+              AppNavigator.navigateTo(internProfile);
+            },
+            child: CircleAvatarMock(
+              radius: 12.r,
+              imageString: 'assets/person.png',
+            ),
           ),
           Gap(24.w),
         ],
@@ -118,8 +124,8 @@ class _MainPageState extends State<MainPage> {
             label: 'Interns',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.more_horiz),
-            label: 'More',
+            icon: Icon(Icons.book),
+            label: 'Report',
           ),
         ],
       ),

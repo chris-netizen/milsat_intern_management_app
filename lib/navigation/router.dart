@@ -2,9 +2,10 @@ import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/screens/Inbox/message_page.dart';
-import 'package:milsat_management_app/screens/Mentor/mentor_profile.dart';
+import 'package:milsat_management_app/screens/profile/mentor_profile.dart';
+import 'package:milsat_management_app/screens/profile/my_profile.dart';
 import '../files.dart';
-import '../screens/Interns/intern_profile.dart';
+import '../screens/profile/intern_profile.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
@@ -33,6 +34,16 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const InternProfile(),
+        );
+      // case reportPage:
+      //   return getPageRoute(
+      //     settings: settings,
+      //     view: const ReportPage(),
+      //   );
+      case myProfile:
+        return getPageRoute(
+          settings: settings,
+          view: const MyProfile(),
         );
 
       default:
