@@ -15,9 +15,12 @@ class MyProfile extends StatelessWidget {
     String internEmail = 'adedejisomoye1@gmail.com';
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Profile'),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              AppNavigator.navigateTo(editProfile);
+            },
             child: Text(
               'Edit',
               style: TextStyle(

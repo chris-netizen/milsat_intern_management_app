@@ -2,6 +2,7 @@ import 'dart:io' show Platform;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/screens/Inbox/message_page.dart';
+import 'package:milsat_management_app/screens/profile/edit_profile_screen.dart';
 import 'package:milsat_management_app/screens/profile/mentor_profile.dart';
 import 'package:milsat_management_app/screens/profile/my_profile.dart';
 import '../files.dart';
@@ -35,11 +36,11 @@ class AppRouter {
           settings: settings,
           view: const InternProfile(),
         );
-      // case reportPage:
-      //   return getPageRoute(
-      //     settings: settings,
-      //     view: const ReportPage(),
-      //   );
+      case editProfile:
+        return getPageRoute(
+          settings: settings,
+          view: const EditProfile(),
+        );
       case myProfile:
         return getPageRoute(
           settings: settings,

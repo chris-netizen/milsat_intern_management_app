@@ -10,7 +10,7 @@ class InternProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     String internName = 'Matthew Oke';
     String internTitle = 'Backend Dev.';
-    String internEmail = 'mathewoke@gmail.com';
+    String internEmail = 'mathewoke.ai@gmail.com';
     return Scaffold(
       appBar: AppBar(),
       body: Column(

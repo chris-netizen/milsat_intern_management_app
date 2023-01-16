@@ -194,7 +194,7 @@ class _MessagePageState extends State<MessagePage> {
                       GestureDetector(
                         onTap: () {},
                         child: const Icon(
-                          Icons.face,
+                          Icons.emoji_emotions_outlined,
                           size: 20,
                           color: Color(0xFF5E545F),
                         ),
