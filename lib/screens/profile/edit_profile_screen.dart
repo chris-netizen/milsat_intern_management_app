@@ -14,6 +14,18 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
   final _formKey = GlobalKey<FormState>();
 
+  TextEditingController nameController = TextEditingController();
+  TextEditingController bioController = TextEditingController();
+  TextEditingController institutionController = TextEditingController();
+  TextEditingController courseController = TextEditingController();
+  TextEditingController mentorController = TextEditingController();
+  TextEditingController admissionYearController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController internRoleController = TextEditingController();
+
+  Color errorBorderColor = Colors.yellowAccent;
+  int maxLength = 33;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +44,8 @@ class _EditProfileState extends State<EditProfile> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Processing Data...')),
                     );
+
+                    _formKey.currentState?.save();
                   }
                 },
                 child: Text(
@@ -82,11 +96,66 @@ class _EditProfileState extends State<EditProfile> {
               Gap(30.h),
               Form(
                 key: _formKey,
+                // autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Gap(15.h),
+                    Text(
+                      'Name',
+                      style: profileTextHeader,
+                    ),
+                    Gap(8.h),
+                    TextFormField(
+                      controller: nameController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        } else if (value.split(' ') == String) {
+                          return 'Name should be text';
+                        } else if (value.split(' ').length > 3) {
+                          return 'Name should not be more than 3 words';
+                        }
+                        return null;
+                      },
+                      maxLength: maxLength,
+                    ),
+                    Gap(15.h),
                     Text(
                       'Bio',
+                      style: profileTextHeader,
+                    ),
+                    Text(
+                      'Should not be more that 50 words',
+                      style: TextStyle(
+                        color: const Color(0xFF5E545F),
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'RaleWay',
+                      ),
+                    ),
+                    Gap(8.h),
+                    TextFormField(
+                      maxLines: 5,
+                      minLines: 1,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        } else if (value.split(' ').length > 50) {
+                          return 'Maximum Characters should not be more than 50';
+                        }
+                        return null;
+                      },
+                    ),
+                    Gap(15.h),
+                    Text(
+                      'Institution',
                       style: profileTextHeader,
                     ),
                     Gap(8.h),
@@ -97,6 +166,112 @@ class _EditProfileState extends State<EditProfile> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter some text';
+                        } else if (value.split(' ').length > 10) {
+                          return 'Maximum Characters should not be more than 10';
+                        }
+                        return null;
+                      },
+                    ),
+                    Gap(15.h),
+                    Text(
+                      'Course of Study',
+                      style: profileTextHeader,
+                    ),
+                    Gap(8.h),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        } else if (value.split(' ').length > 10) {
+                          return 'Maximum Characters should not be more than 10';
+                        }
+                        return null;
+                      },
+                    ),
+                    Gap(15.h),
+                    Text(
+                      'Mentor',
+                      style: profileTextHeader,
+                    ),
+                    Gap(8.h),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        } else if (value.split(' ') == String) {
+                          return 'Name should be text';
+                        } else if (value.split(' ').length > 3) {
+                          return 'Name should not be more than 3 characters';
+                        }
+                        return null;
+                      },
+                    ),
+                    Gap(15.h),
+                    Text(
+                      'Internship Admission Year',
+                      style: profileTextHeader,
+                    ),
+                    Gap(8.h),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        } else if (value.split('') == int) {
+                          return 'Maximum Characters should not be more than 10';
+                        }
+                        return null;
+                      },
+                    ),
+                    Gap(15.h),
+                    Text(
+                      'Email',
+                      style: profileTextHeader,
+                    ),
+                    Gap(8.h),
+                    TextFormField(
+                      maxLines: 5,
+                      minLines: 1,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        final emailPattern = RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+
+                        if (value == null || value.isEmpty) {
+                          return 'Email cannot be empty';
+                        } else if (!emailPattern.hasMatch(value)) {
+                          return 'Enter a valid email';
+                        }
+                        return null;
+                      },
+                    ),
+                    Gap(15.h),
+                    Text(
+                      'Intern Role',
+                      style: profileTextHeader,
+                    ),
+                    Gap(8.h),
+                    TextFormField(
+                      maxLines: 5,
+                      minLines: 1,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter some text';
+                        } else if (value.split(' ').length > 10) {
+                          return 'Maximum Characters should not be more than 10';
                         }
                         return null;
                       },
