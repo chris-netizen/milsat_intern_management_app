@@ -16,7 +16,7 @@ class MentorDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       // height: 200.h,
-      width: 150.w,
+      width: 200.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -56,17 +56,17 @@ class MentorDetails extends StatelessWidget {
                 onTap: () {
                   AppNavigator.navigateTo(mentorProfile);
                 },
-                child: ReusableButton(
+                child: const ReusableButton(
                   color: AppTheme.deepPurpleColor,
                   text: 'View Profile',
-                  width: 65.w,
+                  // width: 65.w,
                   color2: AppTheme.mainAppTheme,
                 ),
               ),
               ReusableButton(
                 color: AppTheme.mainAppTheme,
                 text: 'Message',
-                width: 65.w,
+                // width: 65.w,
                 color2: Colors.black54,
                 border: Border.all(color: Colors.black12),
               ),

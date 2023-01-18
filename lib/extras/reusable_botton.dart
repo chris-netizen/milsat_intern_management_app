@@ -5,14 +5,14 @@ class ReusableButton extends StatelessWidget {
     super.key,
     required this.color,
     required this.text,
-    required this.width,
+    this.width,
     required this.color2,
     this.border,
   });
   final Color color;
   final Color color2;
   final String text;
-  final double width;
+  final double? width;
   final Border? border;
 
   @override
@@ -32,7 +32,7 @@ class ReusableButton extends StatelessWidget {
           style: TextStyle(
             color: color2,
             fontFamily: 'Raleway',
-            fontSize: 14.sp,
+            fontSize: 13.sp,
           ),
         ),
       ),

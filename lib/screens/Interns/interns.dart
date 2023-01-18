@@ -90,7 +90,7 @@ class _InternsState extends State<Interns> {
           ),
           Expanded(
               child: GridView.builder(
-            itemCount: 17,
+            itemCount: 18,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2),
             itemBuilder: (context, index) {

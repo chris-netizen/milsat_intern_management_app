@@ -20,24 +20,23 @@ class InternCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(left: 8.w, right: 8.w),
       margin: const EdgeInsets.all(8),
-      width: 160.w,
       color: AppTheme.mainAppTheme,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Column(
             children: [
-              Gap(15.h),
+              Gap(10.h),
               Image.asset(
                 internImage,
-                width: 70.h,
+                width: 65.h,
               ),
-              Gap(10.h),
+              Gap(7.h),
               Text(
                 internName,
                 style: TextStyle(
                   color: const Color(0xFF000000),
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                   fontFamily: 'Raleway',
                   fontWeight: FontWeight.w600,
                 ),
@@ -46,12 +45,12 @@ class InternCard extends StatelessWidget {
                 internRole,
                 style: TextStyle(
                   color: const Color(0xFF000000),
-                  fontSize: 16.sp,
+                  fontSize: 13.sp,
                   fontFamily: 'Raleway',
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              Gap(25.h),
+              Gap(20.h),
             ],
           ),
           Row(
@@ -61,17 +60,15 @@ class InternCard extends StatelessWidget {
                 onTap: () {
                   AppNavigator.navigateTo(internProfile);
                 },
-                child: ReusableButton(
+                child: const ReusableButton(
                   color: AppTheme.deepPurpleColor,
                   text: 'View Profile',
-                  width: 65.w,
                   color2: AppTheme.mainAppTheme,
                 ),
               ),
               ReusableButton(
                 color: AppTheme.mainAppTheme,
                 text: 'Message',
-                width: 65.w,
                 color2: Colors.black54,
                 border: Border.all(color: Colors.black12),
               ),

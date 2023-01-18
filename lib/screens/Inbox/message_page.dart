@@ -62,7 +62,7 @@ class _MessagePageState extends State<MessagePage> {
               backgroundImage: NetworkImage(
                 widget.messageData.profilePicture,
               ),
-              radius: 22.r,
+              radius: 21.r,
             ),
             Gap(15.w),
             Column(
@@ -91,43 +91,38 @@ class _MessagePageState extends State<MessagePage> {
             )
           ],
         ),
-        leading: Padding(
-          padding: EdgeInsets.only(left: 16.w),
-          child: IconButton(
-            onPressed: () {
-              AppNavigator.doPop();
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              size: 12.sp,
-            ),
-            color: Colors.black,
+        leading: IconButton(
+          onPressed: () {
+            AppNavigator.doPop();
+          },
+          icon: Icon(
+            Icons.arrow_back_ios,
+            size: 12.sp,
           ),
+          color: Colors.black,
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          Padding(
-              padding: EdgeInsets.only(right: 16.w),
-              child: PopupMenuButton(
-                  icon: const Icon(
-                    Icons.more_vert,
-                    color: Colors.black,
+          PopupMenuButton(
+              icon: const Icon(
+                Icons.more_vert,
+                color: Colors.black,
+              ),
+              iconSize: 18.sp,
+              itemBuilder: (context) {
+                return const [
+                  PopupMenuItem(
+                    child: Text('Group Info'),
                   ),
-                  iconSize: 18.sp,
-                  itemBuilder: (context) {
-                    return const [
-                      PopupMenuItem(
-                        child: Text('Group Info'),
-                      ),
-                      PopupMenuItem(
-                        child: Text('Media'),
-                      ),
-                      PopupMenuItem(
-                        child: Text('search'),
-                      ),
-                    ];
-                  })),
+                  PopupMenuItem(
+                    child: Text('Media'),
+                  ),
+                  PopupMenuItem(
+                    child: Text('search'),
+                  ),
+                ];
+              }),
         ],
       ),
       body: Column(
@@ -165,97 +160,15 @@ class _MessagePageState extends State<MessagePage> {
               ],
             ),
           ),
-          Container(
-            decoration: const BoxDecoration(
-              border: Border.symmetric(
-                horizontal: BorderSide(
-                  color: Color(0xFFa29ca2),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  height: 44.h,
+                  child: TextField(),
                 ),
               ),
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 30.w,
-                    right: 15.w,
-                  ),
-                  child: Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: const Icon(
-                          Icons.add_box_outlined,
-                          size: 20,
-                          color: Color(0xFF5E545F),
-                        ),
-                      ),
-                      Gap(17.w),
-                      GestureDetector(
-                        onTap: () {},
-                        child: const Icon(
-                          Icons.face,
-                          size: 20,
-                          color: Color(0xFF5E545F),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 200.w,
-                  height: 41.h,
-                  child: TextField(
-                    controller: senderMessage,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                      ),
-                      hintText: 'Type Something....',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 41.h,
-                    color: AppTheme.deepPurpleColor,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 8.w),
-                      child: GestureDetector(
-                        onTap: () {
-                          if (senderMessage.text.isNotEmpty) {
-                            Me = !Me;
-                            setState(() {});
-                          }
-                        },
-                        child: Row(
-                          children: [
-                            Text(
-                              'Send',
-                              style: TextStyle(
-                                color: AppTheme.mainAppTheme,
-                                fontSize: 15.sp,
-                                fontFamily: 'Raleway',
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            Gap(4.w),
-                            Icon(
-                              Icons.send,
-                              size: 14.sp,
-                              color: AppTheme.mainAppTheme,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            ],
           ),
         ],
       ),
