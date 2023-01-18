@@ -32,7 +32,7 @@ class MentorDetails extends StatelessWidget {
                 name,
                 style: TextStyle(
                   color: const Color(0xFF000000),
-                  fontSize: 20.sp,
+                  fontSize: 18.sp,
                   fontFamily: 'Raleway',
                   fontWeight: FontWeight.w600,
                 ),
@@ -41,7 +41,7 @@ class MentorDetails extends StatelessWidget {
                 title,
                 style: TextStyle(
                   color: const Color(0xFF000000),
-                  fontSize: 18.sp,
+                  fontSize: 16.sp,
                   fontFamily: 'Raleway',
                   fontWeight: FontWeight.w400,
                 ),
@@ -49,28 +49,31 @@ class MentorDetails extends StatelessWidget {
               Gap(40.h),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  AppNavigator.navigateTo(mentorProfile);
-                },
-                child: const ReusableButton(
-                  color: AppTheme.deepPurpleColor,
-                  text: 'View Profile',
-                  // width: 65.w,
-                  color2: AppTheme.mainAppTheme,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    AppNavigator.navigateTo(mentorProfile);
+                  },
+                  child: const ReusableButton(
+                    color: AppTheme.deepPurpleColor,
+                    text: 'View Profile',
+                    // width: 65.w,
+                    color2: AppTheme.mainAppTheme,
+                  ),
                 ),
-              ),
-              ReusableButton(
-                color: AppTheme.mainAppTheme,
-                text: 'Message',
-                // width: 65.w,
-                color2: Colors.black54,
-                border: Border.all(color: Colors.black12),
-              ),
-            ],
+                ReusableButton(
+                  color: AppTheme.mainAppTheme,
+                  text: 'Message',
+                  // width: 65.w,
+                  color2: Colors.black54,
+                  border: Border.all(color: Colors.black12),
+                ),
+              ],
+            ),
           ),
         ],
       ),

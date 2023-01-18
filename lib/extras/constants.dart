@@ -20,7 +20,7 @@ TextStyle boldTextStyle = TextStyle(
 
 TextStyle numericStyle = TextStyle(
   color: const Color(0xFF2D282E),
-  fontSize: 25.sp,
+  fontSize: 20.sp,
   fontWeight: FontWeight.w600,
   fontFamily: 'RaleWay',
 );

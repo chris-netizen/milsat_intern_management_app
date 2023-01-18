@@ -23,6 +23,8 @@ class Interns extends StatefulWidget {
 }
 
 class _InternsState extends State<Interns> {
+  bool tapped = false;
+  Color untappedColor = const Color(0xFF5E545F);
   @override
   Widget build(BuildContext context) {
     int numInterns = 20;
@@ -44,40 +46,62 @@ class _InternsState extends State<Interns> {
                   children: [
                     Row(
                       children: [
-                        const Text('Total Intern: '),
+                        Text(
+                          'Total Intern: ',
+                          style: TextStyle(
+                            color: const Color(0xFF79717A),
+                            fontFamily: 'Raleway',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         Text(
                           '$numInterns',
-                          style: numericStyle,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ],
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        tapped = !tapped;
+                        setState(() {});
+                      },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: AppTheme.deepPurpleColor,
+                          color: tapped
+                              ? AppTheme.deepPurpleColor
+                              : AppTheme.mainAppTheme,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         padding: const EdgeInsets.all(5),
-                        child: const Icon(
+                        child: Icon(
                           Icons.window_outlined,
                           size: 18,
-                          color: AppTheme.mainAppTheme,
+                          color: tapped ? AppTheme.mainAppTheme : untappedColor,
                         ),
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          if (tapped != false) {
+                            tapped = !tapped;
+                          }
+                        });
+                      },
                       child: Container(
                         decoration: BoxDecoration(
-                          color: AppTheme.mainAppTheme,
+                          color: tapped ? AppTheme.mainAppTheme : untappedColor,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         padding: const EdgeInsets.all(5),
-                        child: const Icon(
+                        child: Icon(
                           Icons.list,
                           size: 18,
-                          // color: AppTheme.mainAppTheme,
+                          color: tapped ? untappedColor : AppTheme.mainAppTheme,
                         ),
                       ),
                     ),
