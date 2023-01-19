@@ -4,13 +4,17 @@ import 'package:milsat_management_app/files.dart';
 class InternProfile extends StatelessWidget {
   const InternProfile({
     super.key,
+    required this.internName,
+    required this.internEmail,
+    required this.internTitle,
   });
+
+  final String internName;
+  final String internEmail;
+  final String internTitle;
 
   @override
   Widget build(BuildContext context) {
-    String internName = 'Matthew Oke';
-    String internTitle = 'Backend Dev.';
-    String internEmail = 'mathewoke.ai@gmail.com';
     return Scaffold(
       appBar: AppBar(),
       body: Column(

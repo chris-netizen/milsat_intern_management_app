@@ -4,6 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:milsat_management_app/extras/reusable_botton.dart';
 import 'package:milsat_management_app/files.dart';
 
+import '../profile/intern_profile.dart';
+
+const List<String> list = <String>[
+  'All Department',
+  'UI/UX',
+  'Web Dev.',
+  'Mobile Dev.',
+  'Community Dev.',
+  'Backend Dev.'
+];
+
 class InternCard extends StatelessWidget {
   const InternCard({
     super.key,
@@ -58,7 +69,13 @@ class InternCard extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  AppNavigator.navigateTo(internProfile);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return InternProfile(
+                      internEmail: 'x@gmail.com',
+                      internName: internName,
+                      internTitle: internRole,
+                    );
+                  }));
                 },
                 child: const ReusableButton(
                   color: AppTheme.deepPurpleColor,

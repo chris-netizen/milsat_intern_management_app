@@ -34,7 +34,11 @@ class AppRouter {
       case internProfile:
         return getPageRoute(
           settings: settings,
-          view: const InternProfile(),
+          view: const InternProfile(
+            internEmail: '',
+            internName: '',
+            internTitle: '',
+          ),
         );
       case editProfile:
         return getPageRoute(
