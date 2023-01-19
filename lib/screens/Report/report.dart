@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/files.dart';
+import 'package:milsat_management_app/header.dart';
 
 class Report extends StatelessWidget {
   const Report({super.key});
@@ -13,6 +14,7 @@ class Report extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            const Header(),
             GestureDetector(
               onTap: () {
                 // AppNavigator.navigateTo(settingsPage);
