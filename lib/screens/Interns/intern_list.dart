@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/files.dart';
 
+import '../profile/intern_profile.dart';
+
 class InternList extends StatelessWidget {
   const InternList(
       {super.key, required this.internName, required this.internRole});
@@ -40,7 +42,9 @@ class InternList extends StatelessWidget {
                             internName,
                             style: TextStyle(
                               color: const Color(0xFF2D282E),
-                              fontSize: 12.sp,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Raleway',
                             ),
                           ),
                         ],
@@ -54,7 +58,9 @@ class InternList extends StatelessWidget {
                           Text(
                             internRole,
                             style: TextStyle(
-                              fontSize: 12.sp,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Raleway',
                             ),
                           ),
                           PopupMenuButton(
@@ -64,11 +70,23 @@ class InternList extends StatelessWidget {
                             ),
                             iconSize: 18.sp,
                             itemBuilder: (context) {
-                              return const [
+                              return [
                                 PopupMenuItem(
-                                  child: Text('View Profile'),
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return InternProfile(
+                                          internEmail: 'x@gmail.com',
+                                          internName: internName,
+                                          internTitle: internRole,
+                                        );
+                                      }));
+                                    },
+                                    child: const Text('View Profile'),
+                                  ),
                                 ),
-                                PopupMenuItem(
+                                const PopupMenuItem(
                                   child: Text('message'),
                                 ),
                               ];
@@ -82,7 +100,7 @@ class InternList extends StatelessWidget {
               ],
             ),
           ),
-          Divider(),
+          const Divider(),
         ],
       ),
     );

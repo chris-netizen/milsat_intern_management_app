@@ -16,7 +16,9 @@ class InternProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0.5,
+      ),
       body: Column(
         children: [
           Center(
@@ -115,7 +117,7 @@ class InternProfile extends StatelessWidget {
             color: const Color(0xFF2D282E),
             fontFamily: 'Raleway',
             fontWeight: FontWeight.w600,
-            fontSize: 20.sp,
+            fontSize: 18.sp,
           ),
         ),
         SelectableText(
@@ -124,7 +126,7 @@ class InternProfile extends StatelessWidget {
             color: const Color(0xFF423B43),
             fontFamily: 'Raleway',
             fontWeight: FontWeight.w400,
-            fontSize: 18.sp,
+            fontSize: 16.sp,
           ),
         ),
         Gap(12.h),
@@ -134,7 +136,7 @@ class InternProfile extends StatelessWidget {
             color: const Color(0xFF423B43),
             fontFamily: 'Raleway',
             fontWeight: FontWeight.w500,
-            fontSize: 18.sp,
+            fontSize: 16.sp,
           ),
         ),
       ],

@@ -23,8 +23,8 @@ class Sender extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 17.r,
-                backgroundImage: NetworkImage(
-                  messageData.profilePicture,
+                backgroundImage: const AssetImage(
+                  'assets/woman_picture.png',
                 ),
               ),
               Gap(10.w),

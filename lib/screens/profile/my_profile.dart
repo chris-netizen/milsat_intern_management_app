@@ -10,9 +10,15 @@ class MyProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String internName = '';
-    String internTitle = '';
-    String internEmail = '';
+    List<String> ownerDetails = [
+      'Somoye Christopher',
+      'Mobile Developer',
+      'adedejisomoye1@gmail.com',
+    ];
+
+    // String internName = '';
+    // String internTitle = '';
+    // String internEmail = '';
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),
@@ -37,7 +43,11 @@ class MyProfile extends StatelessWidget {
             Center(
               child: Padding(
                 padding: EdgeInsets.only(top: 16.h),
-                child: _myProfile(internName, internEmail, internTitle),
+                child: _myProfile(
+                  ownerDetails[0],
+                  ownerDetails[2],
+                  ownerDetails[1],
+                ),
               ),
             ),
             Gap(32.h),

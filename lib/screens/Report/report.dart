@@ -10,53 +10,57 @@ class Report extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            const Header(),
-            GestureDetector(
-              onTap: () {
-                // AppNavigator.navigateTo(settingsPage);
-              },
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.settings_outlined,
-                    size: 18.sp,
+      body: Column(
+        children: [
+          const Header(),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    // AppNavigator.navigateTo(settingsPage);
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.settings_outlined,
+                        size: 18.sp,
+                      ),
+                      Gap(8.w),
+                      Text(
+                        'Settings',
+                        style: TextStyle(fontSize: 16.sp),
+                      ),
+                    ],
                   ),
-                  Gap(8.w),
-                  Text(
-                    'Settings',
-                    style: TextStyle(fontSize: 16.sp),
+                ),
+                Gap(16.h),
+                GestureDetector(
+                  onTap: () {
+                    AppNavigator.navigateTo(reportPage);
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.book_outlined,
+                        size: 18.sp,
+                      ),
+                      Gap(8.w),
+                      Text(
+                        'Report',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Gap(16.h),
-            GestureDetector(
-              onTap: () {
-                AppNavigator.navigateTo(reportPage);
-              },
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.book_outlined,
-                    size: 18.sp,
-                  ),
-                  Gap(8.w),
-                  Text(
-                    'Report',
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

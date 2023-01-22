@@ -32,11 +32,26 @@ class Message_Tile extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(
-                      messageData.profilePicture,
-                    ),
-                    radius: 27.r,
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: const AssetImage(
+                          'assets/woman_picture.png',
+                        ),
+                        radius: 27.r,
+                      ),
+                      Positioned(
+                        right: 0,
+                        child: Container(
+                          height: 12.h,
+                          width: 12.w,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xFF00AFA2),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   Gap(24.w),
                   Expanded(

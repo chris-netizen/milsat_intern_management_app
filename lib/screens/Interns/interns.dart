@@ -49,7 +49,7 @@ class _InternsState extends State<Interns> {
     return Scaffold(
       body: Column(
         children: [
-          Header(),
+          const Header(),
           const MilsatIntern(),
           Padding(
             padding: EdgeInsets.only(

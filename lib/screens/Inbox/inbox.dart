@@ -5,20 +5,26 @@ import 'package:milsat_management_app/extras/helpers.dart';
 import 'package:milsat_management_app/files.dart';
 import 'package:milsat_management_app/header.dart';
 
-class InboxPage extends StatelessWidget {
+class InboxPage extends StatefulWidget {
   const InboxPage({super.key});
 
+  @override
+  State<InboxPage> createState() => _InboxPageState();
+}
+
+class _InboxPageState extends State<InboxPage> {
   @override
   Widget build(BuildContext context) {
     String hour = TimeOfDay.now().hour.toString();
     String min = TimeOfDay.now().minute.toString();
     final Faker faker = Faker();
     final date = Helpers.randomDate();
+    bool online = true;
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Header(),
+          const Header(),
           Padding(
             padding: EdgeInsets.only(left: 24.w, top: 24.h),
             child: Text(
@@ -79,6 +85,7 @@ class InboxPage extends StatelessWidget {
               ],
             ),
           ),
+          Gap(15.h),
           Expanded(
             child: ListView.builder(itemBuilder: ((context, index) {
               return Message_Tile(
@@ -89,14 +96,24 @@ class InboxPage extends StatelessWidget {
                   message: faker.lorem.sentence(),
                   dateMessage: Jiffy(date).fromNow(),
                 ),
-                time: '$hour:$min',
+                time:
+                    '${DateTime.now().hour.toString()} : ${DateTime.now().minute.toString()}',
               );
             })),
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const Scaffold();
+              },
+            ),
+          );
+        },
         child: const Icon(
           Icons.message_sharp,
         ),

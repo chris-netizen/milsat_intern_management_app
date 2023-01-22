@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
             top: 52.h,
             left: 16.w,
             right: 16.w,
-            bottom: 16.h,
+            bottom: 10.h,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,8 +24,10 @@ class Header extends StatelessWidget {
                 width: 63.w,
               ),
               Container(
+                padding: EdgeInsets.only(left: 10.w),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(6),
                 ),
                 width: 143.w,
                 height: 30.h,
