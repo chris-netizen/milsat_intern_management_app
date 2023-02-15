@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/extras/reusable_botton.dart';
 import 'package:milsat_management_app/files.dart';
 
@@ -28,8 +29,9 @@ class InternCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(left: 8.w, right: 8.w),
+    return Card(
+      elevation: 0,
+      // padding: EdgeInsets.only(left: 8.w, right: 8.w),
       margin: const EdgeInsets.all(8),
       color: AppTheme.mainAppTheme,
       child: Column(
@@ -45,51 +47,53 @@ class InternCard extends StatelessWidget {
               Gap(7.h),
               Text(
                 internName,
-                style: TextStyle(
+                style: GoogleFonts.raleway(
                   color: const Color(0xFF000000),
                   fontSize: 14.sp,
-                  fontFamily: 'Raleway',
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 internRole,
-                style: TextStyle(
+                style: GoogleFonts.raleway(
                   color: const Color(0xFF000000),
                   fontSize: 13.sp,
-                  fontFamily: 'Raleway',
                   fontWeight: FontWeight.w400,
                 ),
               ),
               Gap(20.h),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return InternProfile(
-                      internEmail: 'x@gmail.com',
-                      internName: internName,
-                      internTitle: internRole,
-                    );
-                  }));
-                },
-                child: const ReusableButton(
-                  color: AppTheme.deepPurpleColor,
-                  text: 'View Profile',
-                  color2: AppTheme.mainAppTheme,
+          Padding(
+            padding: EdgeInsets.only(left: 8.w, right: 8.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return InternProfile(
+                        internEmail: 'x@gmail.com',
+                        internName: internName,
+                        internTitle: internRole,
+                      );
+                    }));
+                  },
+                  child: const ReusableButton(
+                    color: AppTheme.deepPurpleColor,
+                    text: 'View Profile',
+                    color2: AppTheme.mainAppTheme,
+                  ),
                 ),
-              ),
-              ReusableButton(
-                color: AppTheme.mainAppTheme,
-                text: 'Message',
-                color2: Colors.black54,
-                border: Border.all(color: Colors.black12),
-              ),
-            ],
+                ReusableButton(
+                  color: AppTheme.mainAppTheme,
+                  text: 'Message',
+                  color2: Colors.black54,
+                  border: Border.all(color: Colors.black12),
+                ),
+              ],
+            ),
           ),
         ],
       ),

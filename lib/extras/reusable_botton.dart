@@ -33,7 +33,6 @@ class ReusableButton extends StatelessWidget {
           style: GoogleFonts.raleway(
             color: color2,
             fontSize: 13.sp,
-            letterSpacing: 0.75,
           ),
         ),
       ),

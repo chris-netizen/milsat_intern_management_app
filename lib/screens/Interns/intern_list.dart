@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/files.dart';
 
 import '../profile/intern_profile.dart';
@@ -40,11 +41,10 @@ class InternList extends StatelessWidget {
                           Gap(5.w),
                           Text(
                             internName,
-                            style: TextStyle(
+                            style: GoogleFonts.raleway(
                               color: const Color(0xFF2D282E),
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
-                              fontFamily: 'Raleway',
                             ),
                           ),
                         ],
@@ -57,10 +57,9 @@ class InternList extends StatelessWidget {
                         children: [
                           Text(
                             internRole,
-                            style: TextStyle(
+                            style: GoogleFonts.raleway(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
-                              fontFamily: 'Raleway',
                             ),
                           ),
                           PopupMenuButton(
@@ -83,11 +82,17 @@ class InternList extends StatelessWidget {
                                         );
                                       }));
                                     },
-                                    child: const Text('View Profile'),
+                                    child: Text(
+                                      'View Profile',
+                                      style: GoogleFonts.raleway(),
+                                    ),
                                   ),
                                 ),
-                                const PopupMenuItem(
-                                  child: Text('message'),
+                                PopupMenuItem(
+                                  child: Text(
+                                    'message',
+                                    style: GoogleFonts.raleway(),
+                                  ),
                                 ),
                               ];
                             },

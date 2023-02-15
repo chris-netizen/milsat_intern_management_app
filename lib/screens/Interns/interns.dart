@@ -36,11 +36,11 @@ class Interns extends StatefulWidget {
 class _InternsState extends State<Interns> {
   @override
   void initState() {
-    windowTapped = true;
+    windowTapped = false;
     super.initState();
   }
 
-  bool tapped = false;
+  bool tapped = true;
   bool windowTapped = false;
   Color untappedColor = const Color(0xFF5E545F);
   @override
