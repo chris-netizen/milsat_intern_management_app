@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../files.dart';
 
 class InternInfoBox extends StatelessWidget {

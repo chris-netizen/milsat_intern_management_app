@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/files.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -19,7 +19,7 @@ class ProfileHeader extends StatelessWidget {
           children: [
             Text(
               'Kristin Watson',
-              style: TextStyle(
+              style: GoogleFonts.raleway(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
                   color: AppTheme.mainAppTheme),
@@ -27,15 +27,15 @@ class ProfileHeader extends StatelessWidget {
             Gap(2.h),
             Text(
               'felicia.reid@example.com',
-              style: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w400,
+              style: GoogleFonts.raleway(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
                   color: AppTheme.mainAppTheme),
             ),
             Gap(16.h),
             Text(
               'INTERN',
-              style: TextStyle(
+              style: GoogleFonts.raleway(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
                 color: AppTheme.mainAppTheme,

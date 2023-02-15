@@ -12,7 +12,7 @@ class MentorPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Header(),
+          const Header(),
           const MilsatMentor(),
           Gap(24.h),
           const MentorDetails(

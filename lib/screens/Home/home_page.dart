@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:milsat_management_app/files.dart';
 import 'package:milsat_management_app/header.dart';
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Header(),
+            const Header(),
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 24.w,
@@ -43,7 +44,11 @@ class HomePage extends StatelessWidget {
                         Gap(9.33.w),
                         Text(
                           'Milsat internship project starts (Aug \n28, 2004)',
-                          style: alertTextStyle2,
+                          style: GoogleFonts.raleway(
+                            color: const Color(0xFF4E2251),
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ],
                     ),
@@ -51,7 +56,7 @@ class HomePage extends StatelessWidget {
                   Gap(64.h),
                   Text(
                     'It\'s a great day at Milsat',
-                    style: TextStyle(
+                    style: GoogleFonts.raleway(
                       color: AppTheme.greyTextColor,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w600,
@@ -63,11 +68,11 @@ class HomePage extends StatelessWidget {
                     'Velit officia consequat duis enim velit mollit.'
                     'Exercitation veniam consequat sunt nostrud amet.',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: GoogleFonts.raleway(
                         color: const Color(0xFF79717A),
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
-                        fontFamily: 'Raleway'),
+                        ),
                   ),
                 ],
               ),

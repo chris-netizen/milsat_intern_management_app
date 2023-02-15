@@ -133,30 +133,31 @@ class _InternsState extends State<Interns> {
             ),
           ),
           Expanded(
-              child: !windowTapped
-                  ? GridView.builder(
-                      itemCount: allDepartment.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2),
-                      itemBuilder: (context, i) {
-                        return InternCard(
-                          internImage: 'assets/woman_picture.png',
-                          internName: allDepartment.keys.elementAt(i),
-                          internRole: allDepartment.values.elementAt(i),
-                        );
-                      },
-                    )
-                  : ListView.builder(
-                      itemCount: allDepartment.length,
-                      scrollDirection: Axis.vertical,
-                      itemBuilder: (BuildContext context, int i) {
-                        return InternList(
-                          internName: allDepartment.keys.elementAt(i),
-                          internRole: allDepartment.values.elementAt(i),
-                        );
-                      },
-                    )),
+            child: !windowTapped
+                ? GridView.builder(
+                    itemCount: allDepartment.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                    itemBuilder: (context, i) {
+                      return InternCard(
+                        internImage: 'assets/woman_picture.png',
+                        internName: allDepartment.keys.elementAt(i),
+                        internRole: allDepartment.values.elementAt(i),
+                      );
+                    },
+                  )
+                : ListView.builder(
+                    itemCount: allDepartment.length,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (BuildContext context, int i) {
+                      return InternList(
+                        internName: allDepartment.keys.elementAt(i),
+                        internRole: allDepartment.values.elementAt(i),
+                      );
+                    },
+                  ),
+          ),
         ],
       ),
     );

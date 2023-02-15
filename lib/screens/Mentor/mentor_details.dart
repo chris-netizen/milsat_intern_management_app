@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/files.dart';
 import 'package:milsat_management_app/header.dart';
 
@@ -31,19 +32,17 @@ class MentorDetails extends StatelessWidget {
               Gap(15.h),
               Text(
                 name,
-                style: TextStyle(
+                style: GoogleFonts.raleway(
                   color: const Color(0xFF000000),
                   fontSize: 18.sp,
-                  fontFamily: 'Raleway',
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 title,
-                style: TextStyle(
+                style: GoogleFonts.raleway(
                   color: const Color(0xFF000000),
                   fontSize: 16.sp,
-                  fontFamily: 'Raleway',
                   fontWeight: FontWeight.w400,
                 ),
               ),

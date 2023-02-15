@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:milsat_management_app/files.dart';
-import 'package:milsat_management_app/screens/profile/intern_profile.dart';
+import 'package:milsat_management_app/screens/more/Report/more.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -15,7 +15,7 @@ class _MainPageState extends State<MainPage> {
     InboxPage(),
     MentorPage(),
     Interns(),
-    Report(),
+    More(),
   ];
 
   int currentIndex = 0;
@@ -56,8 +56,8 @@ class _MainPageState extends State<MainPage> {
             label: 'Interns',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Report',
+            icon: Icon(Icons.more_horiz),
+            label: 'More',
           ),
         ],
       ),

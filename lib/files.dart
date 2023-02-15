@@ -21,5 +21,4 @@ export 'package:milsat_management_app/screens/Inbox/message_data.dart';
 export 'package:milsat_management_app/screens/Inbox/message_tile.dart';
 export 'package:milsat_management_app/screens/Inbox/inbox.dart';
 export 'package:milsat_management_app/screens/Interns/interns.dart';
-export 'package:milsat_management_app/screens/Report/report.dart';
 export 'package:milsat_management_app/screens/Mentor/mentor.dart';

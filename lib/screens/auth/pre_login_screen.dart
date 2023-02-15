@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../files.dart';
 
 class PreLogin extends StatelessWidget {
@@ -22,16 +23,14 @@ class PreLogin extends StatelessWidget {
           Text(
             'Welcome to \nMilsat Internship',
             textAlign: TextAlign.center,
-            style: TextStyle(
-                fontFamily: 'RaleWay',
-                fontSize: 31.sp,
-                fontWeight: FontWeight.w600),
+            style: GoogleFonts.raleway(
+                fontSize: 31.sp, fontWeight: FontWeight.w600),
           ),
           Gap(184.h),
           Text(
             'Login to get started',
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: GoogleFonts.raleway(
               fontSize: 16.sp,
               fontWeight: FontWeight.w400,
               color: AppTheme.smallTextColor,
@@ -46,7 +45,10 @@ class PreLogin extends StatelessWidget {
               onPressed: () {
                 AppNavigator.navigateTo(logInRoute);
               },
-              child: const Text('Login'),
+              child: Text(
+                'Login',
+                style: GoogleFonts.raleway(fontSize: 18.sp),
+              ),
             ),
           ),
         ],

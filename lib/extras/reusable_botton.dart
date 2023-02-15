@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/files.dart';
 
 class ReusableButton extends StatelessWidget {
@@ -29,10 +30,10 @@ class ReusableButton extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: TextStyle(
+          style: GoogleFonts.raleway(
             color: color2,
-            fontFamily: 'Raleway',
             fontSize: 13.sp,
+            letterSpacing: 0.75,
           ),
         ),
       ),
