@@ -39,7 +39,9 @@ class More extends StatelessWidget {
                           ),
                           Text(
                             'mobile developer',
-                            style: TextStyle(fontSize: 16.sp),
+                            style: GoogleFonts.raleway(
+                              fontSize: 16.sp,
+                            ),
                           ),
                         ],
                       ),
@@ -57,7 +59,7 @@ class More extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        AppNavigator.navigateTo(reportPage);
+                        AppNavigator.navigateTo(internInfo);
                       },
                       child: Row(
                         children: [
@@ -78,9 +80,7 @@ class More extends StatelessWidget {
                     ),
                     Gap(16.h),
                     GestureDetector(
-                      onTap: () {
-                        AppNavigator.navigateTo(reportPage);
-                      },
+                      onTap: () {},
                       child: Row(
                         children: [
                           Icon(
@@ -101,7 +101,7 @@ class More extends StatelessWidget {
                     Gap(16.h),
                     GestureDetector(
                       onTap: () {
-                        AppNavigator.navigateTo(reportPage);
+                        AppNavigator.navigateToAndReplace(logInRoute);
                       },
                       child: Row(
                         children: [

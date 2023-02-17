@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _preLoginScreen() async {
     await Future.delayed(const Duration(milliseconds: 7000), () {});
-    AppNavigator.navigateTo(pre);
+    AppNavigator.navigateToAndReplace(pre);
   }
 
   @override

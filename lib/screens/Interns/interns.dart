@@ -1,6 +1,7 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/extras/dropdownmenu.dart';
 import 'package:milsat_management_app/header.dart';
 import 'package:milsat_management_app/screens/Interns/intern_card.dart';
@@ -64,16 +65,15 @@ class _InternsState extends State<Interns> {
                   children: [
                     Text(
                       'Total Intern: ',
-                      style: TextStyle(
+                      style: GoogleFonts.raleway(
                         color: const Color(0xFF79717A),
-                        fontFamily: 'Raleway',
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Text(
                       '$numInterns',
-                      style: TextStyle(
+                      style: GoogleFonts.raleway(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                       ),

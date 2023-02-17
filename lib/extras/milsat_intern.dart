@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/extras/constants.dart';
 
 class MilsatIntern extends StatelessWidget {
@@ -15,7 +16,11 @@ class MilsatIntern extends StatelessWidget {
           child: Center(
             child: Text(
               'Milsat Intern',
-              style: internBoldTextStyle,
+              style: GoogleFonts.raleway(
+                color: const Color(0xFFFFFFFF),
+                fontSize: 25.sp,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),

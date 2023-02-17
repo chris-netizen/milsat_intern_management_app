@@ -14,7 +14,7 @@ class AppTextField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         suffixIcon: icon,
-        fillColor: const Color(0xFFCBADCD),
+        fillColor: const Color(0xFFF2EBF3),
         filled: true,
         hintText: text,
         hintStyle: GoogleFonts.raleway(),

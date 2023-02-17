@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:milsat_management_app/files.dart';
 
 class DropdownButtonExample extends StatefulWidget {
@@ -50,7 +51,10 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
               items: list.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value),
+                  child: Text(
+                    value,
+                    style: GoogleFonts.raleway(),
+                  ),
                 );
               }).toList(),
             ),

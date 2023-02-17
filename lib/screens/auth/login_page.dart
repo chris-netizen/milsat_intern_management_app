@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool tapped = false;
-  bool checked = false;
+  bool? checked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,51 +83,52 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: tapped ? true : false,
                   ),
                   Gap(11.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Column(
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          Row(
+                            children: [
+                              Checkbox(
+                                value: checked,
+                                activeColor: AppTheme.deepPurpleColor,
+                                onChanged: (val) {
+                                  setState(() {
+                                    checked = val;
+                                  });
+                                },
+                              ),
+                              Gap(7.w),
+                              Text(
+                                'Keep me logged in',
+                                style: GoogleFonts.raleway(
+                                  color: const Color(0xFF5E545F),
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                           GestureDetector(
                             onTap: () {
-                              checked = !checked;
-                              setState(() {});
+                              Navigator.push(
+                                context,
+                                (MaterialPageRoute(
+                                  builder: (context) => const ForgetPassword(),
+                                )),
+                              );
                             },
-                            child: Icon(
-                              checked
-                                  ? Icons.check_box_outlined
-                                  : Icons.check_box_outline_blank,
-                              size: 14.sp,
-                            ),
-                          ),
-                          Gap(7.w),
-                          Text(
-                            'Keep me logged in',
-                            style: GoogleFonts.raleway(
-                              color: const Color(0xFF5E545F),
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w500,
+                            child: Text(
+                              'Forgot Password?',
+                              style: GoogleFonts.raleway(
+                                color: const Color(0xFF5E545F),
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ],
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            (MaterialPageRoute(
-                              builder: (context) => const ForgetPassword(),
-                            )),
-                          );
-                        },
-                        child: Text(
-                          'Forgot Password?',
-                          style: GoogleFonts.raleway(
-                            color: const Color(0xFF5E545F),
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
                       ),
                     ],
                   ),

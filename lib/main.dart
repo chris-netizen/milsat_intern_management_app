@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'core/app_state/state.dart';
 import 'files.dart';
 
 Future<void> main() async {
@@ -8,7 +10,9 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown
   ]);
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,15 +26,21 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       minTextAdapt: true,
       builder: (builder, context) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.purple,
+        return Provider(
+          create: (BuildContext context) {
+            return AppState();
+          },
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              // useMaterial3: true,
+              primarySwatch: Colors.purple,
+            ),
+            home: const SplashScreen(),
+            navigatorKey: AppNavigator.navKey,
+            onGenerateRoute: AppRouter.generateRoutes,
           ),
-          home: const SplashScreen(),
-          navigatorKey: AppNavigator.navKey,
-          onGenerateRoute: AppRouter.generateRoutes,
         );
       },
     );

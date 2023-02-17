@@ -6,6 +6,8 @@ import 'package:milsat_management_app/screens/profile/edit_profile_screen.dart';
 import 'package:milsat_management_app/screens/profile/mentor_profile.dart';
 import 'package:milsat_management_app/screens/profile/my_profile.dart';
 import '../files.dart';
+import '../screens/more/Report/blocker.dart';
+import '../screens/more/Report/internInfo.dart';
 import '../screens/profile/intern_profile.dart';
 
 class AppRouter {
@@ -49,6 +51,16 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const MyProfile(),
+        );
+      case internInfo:
+        return getPageRoute(
+          settings: settings,
+          view: const InternInfoPage(),
+        );
+      case blocker:
+        return getPageRoute(
+          settings: settings,
+          view: const Blocker(),
         );
 
       default:
