@@ -1,14 +1,19 @@
 import 'dart:io' show Platform;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:milsat_management_app/screens/Inbox/message_page.dart';
-import 'package:milsat_management_app/screens/profile/edit_profile_screen.dart';
-import 'package:milsat_management_app/screens/profile/mentor_profile.dart';
-import 'package:milsat_management_app/screens/profile/my_profile.dart';
+import 'package:milsat_management_app/InternPart/mainpage.dart';
+import 'package:milsat_management_app/InternPart/screens/more/Report/engagement.dart';
+import 'package:milsat_management_app/InternPart/screens/more/Report/report.dart';
+import 'package:milsat_management_app/InternPart/screens/more/Report/submit.dart';
+import 'package:milsat_management_app/InternPart/screens/profile/edit_profile_screen.dart';
+import 'package:milsat_management_app/InternPart/screens/profile/mentor_profile.dart';
+import 'package:milsat_management_app/InternPart/screens/profile/my_profile.dart';
+import 'package:milsat_management_app/MentorPart/home.dart';
+import 'package:milsat_management_app/MentorPart/intern/assigned_interns.dart';
+import 'package:milsat_management_app/MentorPart/mainpageMentor.dart';
 import '../files.dart';
-import '../screens/more/Report/blocker.dart';
-import '../screens/more/Report/internInfo.dart';
-import '../screens/profile/intern_profile.dart';
+import '../InternPart/screens/more/Report/blocker.dart';
+import '../InternPart/screens/more/Report/internInfo.dart';
+import '../InternPart/screens/profile/intern_profile.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
@@ -23,10 +28,10 @@ class AppRouter {
           settings: settings,
           view: const LoginPage(),
         );
-      case inbox:
+      case mainPage:
         return getPageRoute(
           settings: settings,
-          view: const InboxPage(),
+          view: const MainPage(),
         );
       case mentorProfile:
         return getPageRoute(
@@ -39,7 +44,7 @@ class AppRouter {
           view: const InternProfile(
             internEmail: '',
             internName: '',
-            internTitle: '',
+            internTitle: 0,
           ),
         );
       case editProfile:
@@ -61,6 +66,43 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const Blocker(),
+        );
+      case engagement:
+        return getPageRoute(
+          settings: settings,
+          view: const Engagement(),
+        );
+      case report:
+        return getPageRoute(
+          settings: settings,
+          view: const InternReport(),
+        );
+      case submit:
+        return getPageRoute(
+          settings: settings,
+          view: const Submit(),
+        );
+      case resetPassword:
+        return getPageRoute(
+          settings: settings,
+          view: ResetPasswordPage(
+            email: emailInput['email'],
+          ),
+        );
+      case mainPageMentor:
+        return getPageRoute(
+          settings: settings,
+          view: const MainPageMentor(),
+        );
+      case homePageMentor:
+        return getPageRoute(
+          settings: settings,
+          view: const HomePageMentor(),
+        );
+      case assignedInterns:
+        return getPageRoute(
+          settings: settings,
+          view: const AssignedInterns(),
         );
 
       default:

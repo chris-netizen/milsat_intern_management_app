@@ -23,49 +23,28 @@ class Header extends StatelessWidget {
                 height: 27.h,
                 width: 63.w,
               ),
-              Container(
-                padding: EdgeInsets.only(left: 10.w),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                width: 143.w,
-                height: 30.h,
-                child: TextField(
-                  // textAlignVertical: TextAlignVertical.center,
-                  decoration: InputDecoration(
-                    suffixIcon: Container(
-                      height: 12.h,
-                      width: 12.w,
-                      decoration: const BoxDecoration(
-                        color: AppTheme.deepPurpleColor,
-                      ),
-                      child: const Icon(
-                        Icons.search,
-                        size: 12,
-                        color: AppTheme.mainAppTheme,
-                      ),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: const Icon(
+                      CupertinoIcons.search,
+                      color: Colors.black87,
                     ),
-                    border: InputBorder.none,
-                    hintText: 'Intern, message...',
                   ),
-                  cursorHeight: 15.h,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  AppNavigator.navigateTo(myProfile);
-                },
-                child: CircleAvatarMock(
-                  radius: 12.r,
-                  imageString: 'assets/person.png',
-                ),
+                  Gap(16.w),
+                  CircleAvatarMock(
+                    radius: 12.r,
+                    imageString: 'assets/person.png',
+                  ),
+                ],
               ),
             ],
           ),
         ),
         const Divider(
           thickness: 1.0,
+          height: 0,
         ),
       ],
     );
